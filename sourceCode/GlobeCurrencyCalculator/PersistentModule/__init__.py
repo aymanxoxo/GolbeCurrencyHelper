@@ -1,1 +1,2 @@
 from GlobeCurrencyCalculator.PersistentModule.RomanNumericProvider import RomanNumericProvider
+from GlobeCurrencyCalculator.PersistentModule.RomanSynonumProvider import RomanSynonumProvider

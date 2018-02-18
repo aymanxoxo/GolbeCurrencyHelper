@@ -1,1 +1,2 @@
 from GlobeCurrencyCalculator.UnitTests.PersistentModuleTests.test_RomanNumericProvider import RomanNumericProviderTests
+from GlobeCurrencyCalculator.UnitTests.PersistentModuleTests.test_RomanSynonumProvider import RomanSynonumProviderTests
