@@ -2,8 +2,6 @@ from GlobeCurrencyCalculator.PersistentModule import RomanSynonumProvider
 from GlobeCurrencyCalculator.Enitites import RomanSynonym
 from GlobeCurrencyCalculator.Enitites import Roman
 import unittest
-import sys
-sys.path.append('.')
 
 class RomanSynonumProviderTests(unittest.TestCase):
     def test_addSyn_getSyn(self):

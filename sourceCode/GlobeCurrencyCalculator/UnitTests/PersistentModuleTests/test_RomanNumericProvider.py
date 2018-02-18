@@ -1,9 +1,6 @@
 from GlobeCurrencyCalculator.PersistentModule import RomanNumericProvider
 from GlobeCurrencyCalculator.Enitites import Roman
 import unittest
-import sys
-
-sys.path.append('.')
 
 class RomanNumericProviderTests(unittest.TestCase):
     def test_getNumericValue_returnCorrectResult(self):

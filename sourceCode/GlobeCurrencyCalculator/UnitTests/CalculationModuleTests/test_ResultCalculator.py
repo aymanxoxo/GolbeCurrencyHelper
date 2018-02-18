@@ -1,9 +1,6 @@
 from GlobeCurrencyCalculator.CalculationModule import ResultCalculator
 from GlobeCurrencyCalculator.Enitites import Ore
 import unittest
-import sys
-
-sys.path.append('.')
 
 class ResultCalculatorTests(unittest.TestCase):
     def test_ResolveOreUnitValue_normalBehavior(self):
