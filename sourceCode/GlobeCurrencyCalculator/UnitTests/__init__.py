@@ -1,0 +1,1 @@
+from GlobeCurrencyCalculator.UnitTests import PersistentModuleTests
