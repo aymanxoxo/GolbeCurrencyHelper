@@ -1,0 +1,1 @@
+from GlobeCurrencyCalculator.UnitTests.ProcessingModuleTests.test_SplitterProcessor import SplitterProcessorTests
