@@ -25,11 +25,13 @@ class Analysis:
 
         if isQuestion:
             if exists:
-                q = QuestionOre(sides[1])
+                questionPhrase = sides[1].replace("?", "")
+                q = QuestionOre(questionPhrase)
                 q.Type = InputType.QuestionOre
                 return q
             else:
-                q = QuestionRoman(sides[1])
+                questionPhrase = sides[1].replace("?", "")
+                q = QuestionRoman(questionPhrase)
                 q.Type = InputType.QuestionRoman
                 return q
         else:

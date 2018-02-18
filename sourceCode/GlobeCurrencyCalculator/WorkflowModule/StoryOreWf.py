@@ -1,15 +1,14 @@
-from GlobeCurrencyCalculator.WorkflowModule import IWorkflow
-from GlobeCurrencyCalculator.AnalysisModule import Analysis
+from GlobeCurrencyCalculator.WorkflowModule import Workflow
 from GlobeCurrencyCalculator.PersistentModule import OreProvider, RomanNumericProvider
 from GlobeCurrencyCalculator.Enitites import Ore
-from GlobeCurrencyCalculator.CalculationModule import ResultCalculator
+from GlobeCurrencyCalculator.CalculationModule import ResultCalculator, RomanCalculator
 
-class StoryOreWf(IWorkflow):
+class StoryOreWf(Workflow):
 
     def Handle(self):
-        analysis = Analysis()
         romanNumericProvider = RomanNumericProvider()
-        romanCalc = ResultCalculator()
+        resultCalc = ResultCalculator()
+        romanCalc = RomanCalculator()
         oreProvider = OreProvider()
 
         if self.InputEntity == None or self.InputEntity.LeftPart == None or self.InputEntity.RightPart == None:
@@ -21,20 +20,15 @@ class StoryOreWf(IWorkflow):
         totalValue = valueInCredits.lower().replace('credits', '')
         totalValue = int(totalValue)
 
-        oreName = oreInSynonumUnits.split('')
+        oreName = oreInSynonumUnits.split(' ')
         oreName = oreName[len(oreName) - 1: 1].strip()
 
         synonumsStr = oreInSynonumUnits.replace(oreName, '').split(' ')
-        unitsCountInRomanNumber = ""
+        unitsCountInRomanNumber = self.convertSynonumsToRomans(synonumsStr)
 
-        for synonumStr in synonumsStr:
-            s = analysis.GetRomanSynonum(synonumStr)
-            if s != None:
-                unitsCountInRomanNumber += s.RomanNumber
+        oreUnits = romanCalc.CalculatorRomanValue(unitsCountInRomanNumber)
 
-        oreUnits = romanNumericProvider.GetNumericValue(unitsCountInRomanNumber)
-
-        oreUnitValue = romanCalc.ResolveOreUnitValue(oreUnits, oreName, totalValue)
+        oreUnitValue = resultCalc.ResolveOreUnitValue(oreUnits, oreName, totalValue)
 
         oreProvider.Add(Ore(oreName, oreUnitValue))
         

@@ -1,3 +1,5 @@
-from GlobeCurrencyCalculator.WorkflowModule.IWorkflow import IWorkflow
+from GlobeCurrencyCalculator.WorkflowModule.Workflow import Workflow
 from GlobeCurrencyCalculator.WorkflowModule.StoryRomanWf import StoryRomanWf
 from GlobeCurrencyCalculator.WorkflowModule.StoryOreWf import StoryOreWf
+from GlobeCurrencyCalculator.WorkflowModule.QuestionOreWf import QuestionOreWf
+from GlobeCurrencyCalculator.WorkflowModule.QuestionRomanWf import QuestionRomanWf
