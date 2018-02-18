@@ -8,6 +8,6 @@ sys.path.append('.')
 class RomanNumericProviderTests(unittest.TestCase):
     def test_getNumericValue_returnCorrectResult(self):
         provider = RomanNumericProvider()
-        result = provider.GetNumericValue(Roman('I', 0))
+        result = provider.GetNumericValue('I')
         print(result.Value)
         # self.assertEqual(result.Value, 1)
