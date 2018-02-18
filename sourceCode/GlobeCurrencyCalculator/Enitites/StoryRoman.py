@@ -1,4 +1,6 @@
 from GlobeCurrencyCalculator.Enitites import Story, Roman
 
 class StoryRoman(Story, Roman):
-    pass
+    def SetParts(self, leftPart, rightPart):
+        self.LeftPart = leftPart
+        self.RightPart = rightPart

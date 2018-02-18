@@ -1,4 +1,6 @@
 from GlobeCurrencyCalculator.Enitites import Story, Ore
 
 class StoryOre(Story, Ore):
-    pass
+    def SetParts(self, leftPart, rightPart):
+        self.LeftPart = leftPart
+        self.RightPart = rightPart

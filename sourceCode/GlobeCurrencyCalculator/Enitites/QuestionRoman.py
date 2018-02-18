@@ -1,4 +1,5 @@
 from GlobeCurrencyCalculator.Enitites import Question, Roman
 
 class QuestionRoman(Question, Roman):
-    pass
+    def SetParts(self, leftPart, rightPart):
+        self.QuestionPhrase = rightPart
