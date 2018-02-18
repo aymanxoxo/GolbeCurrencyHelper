@@ -8,3 +8,4 @@ from GlobeCurrencyCalculator.Enitites.StoryRoman import StoryRoman
 from GlobeCurrencyCalculator.Enitites.StoryOre import StoryOre
 from GlobeCurrencyCalculator.Enitites.QuestionRoman import QuestionRoman
 from GlobeCurrencyCalculator.Enitites.QuestionOre import QuestionOre
+from GlobeCurrencyCalculator.Enitites.RomanSynonym import RomanSynonym
