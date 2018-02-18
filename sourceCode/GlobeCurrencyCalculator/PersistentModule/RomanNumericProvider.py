@@ -20,6 +20,9 @@ class RomanNumericProvider:
     def GetNumericValue(self, roman):
         return self.values.FirstOrDefault(self.__filter, roman.RomanNumber)
 
+    def GetRomanNumber(self, number):
+        pass
+
     def __filter(self, roman, compareVal):
         if roman.RomanNumber == compareVal:
             return True
