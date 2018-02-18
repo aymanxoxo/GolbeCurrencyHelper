@@ -1,1 +1,1 @@
-from HelperModule.InputHelper import InputHelper
+from GlobeCurrencyCalculator.HelperModule.InputHelper import InputHelper
