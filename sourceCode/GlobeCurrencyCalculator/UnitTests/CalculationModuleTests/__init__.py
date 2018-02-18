@@ -1,1 +1,2 @@
 from GlobeCurrencyCalculator.UnitTests.CalculationModuleTests.test_ResultCalculator import ResultCalculatorTests
+from GlobeCurrencyCalculator.UnitTests.CalculationModuleTests.test_RomanCalculator import RomanCalculatorTests

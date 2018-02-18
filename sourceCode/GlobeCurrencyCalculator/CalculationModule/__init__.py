@@ -1,1 +1,2 @@
 from GlobeCurrencyCalculator.CalculationModule.ResultCalculator import ResultCalculator
+from GlobeCurrencyCalculator.CalculationModule.RomanCalculator import RomanCalculator
