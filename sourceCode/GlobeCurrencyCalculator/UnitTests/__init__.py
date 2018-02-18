@@ -1,3 +1,4 @@
 from GlobeCurrencyCalculator.UnitTests import PersistentModuleTests
 from GlobeCurrencyCalculator.UnitTests import CalculationModuleTests
 from GlobeCurrencyCalculator.UnitTests import ProcessingModuleTests
+from GlobeCurrencyCalculator.UnitTests import AnalysisModuleTests
