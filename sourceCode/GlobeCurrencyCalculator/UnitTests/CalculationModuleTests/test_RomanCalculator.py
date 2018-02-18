@@ -22,9 +22,31 @@ class RomanCalculatorTests(unittest.TestCase):
         self.assertEqual(result, 14)
 
     def test_XVI_16(self):
-        result = self.calculator.CalculatorRomanValue('XIV')
+        result = self.calculator.CalculatorRomanValue('XVI')
         self.assertEqual(result, 16)
 
     def test_MMMCDXLVI_3446(self):
         result = self.calculator.CalculatorRomanValue('MMMCDXLVI')
         self.assertEqual(result, 3446)
+
+    def test_smann_mmcdxlvt_3446(self):
+        result = self.calculator.CalculatorRomanValue('mmmcdxlvi')
+        self.assertEqual(result, 3446)
+
+    def test_MMMMI_error(self):
+        try:
+            result = self.calculator.CalculatorRomanValue('MMMMI')
+            self.assertTrue(False)
+        except ValueError:
+            self.assertTrue(True)
+        except Exception:
+            self.assertTrue(False)
+    
+    def test_hello_error(self):
+        try:
+            result = self.calculator.CalculatorRomanValue('hello')
+            self.assertTrue(False)
+        except ValueError:
+            self.assertTrue(True)
+        except Exception:
+            self.assertTrue(False)

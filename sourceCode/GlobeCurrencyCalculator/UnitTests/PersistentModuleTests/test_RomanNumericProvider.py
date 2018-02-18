@@ -6,5 +6,4 @@ class RomanNumericProviderTests(unittest.TestCase):
     def test_getNumericValue_returnCorrectResult(self):
         provider = RomanNumericProvider()
         result = provider.GetNumericValue('I')
-        print(result.Value)
-        # self.assertEqual(result.Value, 1)
+        self.assertEqual(result.Value, 1)
