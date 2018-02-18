@@ -2,7 +2,8 @@ from GlobeCurrencyCalculator.Enitites import Ore
 
 class ResultCalculator:
     def ResolveOreUnitValue(self, oreCount, ore, totalValue):
-        pass
+        ore.Value = totalValue / oreCount
+        return ore
 
     def CalculateOreUnitsValue(self, oreCount, ore):
-        pass
+        return oreCount * ore.Value
