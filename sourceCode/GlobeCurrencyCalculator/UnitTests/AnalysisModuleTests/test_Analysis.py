@@ -1,9 +1,8 @@
 from GlobeCurrencyCalculator.AnalysisModule import Analysis
-from GlobeCurrencyCalculator.Enitites import StoryRoman
-from GlobeCurrencyCalculator.Enitites import StoryOre
-from GlobeCurrencyCalculator.Enitites import QuestionRoman
-from GlobeCurrencyCalculator.Enitites import QuestionOre
+from GlobeCurrencyCalculator.Enitites import StoryRoman, StoryOre, QuestionRoman, QuestionOre, Ore, InputType
+from GlobeCurrencyCalculator.PersistentModule import OreProvider
 import unittest
+import pdb
 
 class test_Analysis(unittest.TestCase):
     
@@ -14,6 +13,7 @@ class test_Analysis(unittest.TestCase):
         self.assertIsInstance(result, StoryRoman)
     
     def test_defineSentenctType_StoryOre(self):
+        OreProvider().Add(Ore('gold', 3))
         result = self.analysis.DefineSentectType('globe gold is 32 credits')
         self.assertIsInstance(result, StoryOre)
 
@@ -22,5 +22,6 @@ class test_Analysis(unittest.TestCase):
         self.assertIsInstance(result, QuestionRoman)
 
     def test_defineSentenctType_QuestionOre(self):
+        OreProvider().Add(Ore('gold', 3))
         result = self.analysis.DefineSentectType('how much credits is globe gold?')
-        self.assertIsInstance(result, QuestionOre)    
+        self.assertIsInstance(result, QuestionOre)

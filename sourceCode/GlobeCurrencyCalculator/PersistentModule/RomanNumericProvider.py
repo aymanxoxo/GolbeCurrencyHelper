@@ -3,10 +3,8 @@ from GlobeCurrencyCalculator.HelperModule import List
 
 
 class RomanNumericProvider:
-    
-    def __init__(self):
-        self.__values = List()
-        self.__values.extend(
+    __values = List()
+    __values.extend(
         [
             Roman('I', 1),
             Roman('V', 5),
@@ -16,6 +14,9 @@ class RomanNumericProvider:
             Roman('D', 500),
             Roman('M', 1000)
         ])
+
+    def __init__(self):
+        pass
 
     def GetNumericValue(self, romanStr):
         return self.__values.FirstOrDefault(self.__filter, romanStr.upper())

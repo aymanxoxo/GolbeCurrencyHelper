@@ -2,8 +2,10 @@ from GlobeCurrencyCalculator.HelperModule import List
 from GlobeCurrencyCalculator.Enitites import RomanSynonym
 
 class RomanSynonumProvider:
+    __synonums = List()
+    
     def __init__(self):
-        self.__synonums = List()
+        pass
     
     def GetRoman(self, synonumStr):
         return self.__synonums.FirstOrDefault(self.__filter, synonumStr.strip().upper())
