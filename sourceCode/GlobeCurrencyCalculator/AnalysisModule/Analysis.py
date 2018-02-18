@@ -45,11 +45,15 @@ class Analysis:
     def __filter(self, str, func):
         return func(str)
             
-    
-    def IsRoman(self, str):
+    def IsRomanSynonum(self, str):
         romanProvider = RomanSynonumProvider()
         result = romanProvider.GetRoman(str)
         return False if result == None else True
+
+    def GetRomanSynonum(self, str):
+        romanProvider = RomanSynonumProvider()
+        result = romanProvider.GetRoman(str)
+        return result
 
     def IsOre(self, str):
         if not str or len(str.strip()) == 0:
