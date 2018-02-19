@@ -13,8 +13,9 @@ class InputHelper:
         cleanLines = self.__removeSpacesFromLines(lines)
         return cleanLines
 
-    def ReadFile(self, fname):
+    def ReadFile(self):
         print("What is the file name?")
+        fname = self.ReadLine()
         nameParts = fname.split('.')
         if len(nameParts) != 2:
             raise ValueError

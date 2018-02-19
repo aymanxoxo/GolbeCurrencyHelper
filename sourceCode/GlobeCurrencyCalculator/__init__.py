@@ -5,9 +5,7 @@ inputHelper = InputHelper()
 analysis = Analysis()
 
 print("Hello, do you have some calculations for me?")
-print("What is the file name?")
-fileName = inputHelper.ReadLine()
-lines = inputHelper.ReadFile(fileName)
+lines = inputHelper.ReadFile()
 
 for line in lines:
     entity = analysis.DefineSentectType(line)
