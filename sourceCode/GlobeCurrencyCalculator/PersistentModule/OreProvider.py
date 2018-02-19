@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.HelperModule import List
-from GlobeCurrencyCalculator.Enitites import Ore
+from HelperModule import List
+from Enitites import Ore
 
 class OreProvider:
     __ores = List()

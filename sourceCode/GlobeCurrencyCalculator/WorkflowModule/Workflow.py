@@ -1,11 +1,11 @@
-from GlobeCurrencyCalculator.AnalysisModule import Analysis
+import AnalysisModule
 from abc import ABC, abstractmethod
 
 class Workflow(ABC):
     
     def __init__(self, input):
         self.InputEntity = input
-        self.Analysis = Analysis()
+        self.Analysis = AnalysisModule.Analysis()
 
     @abstractmethod
     def Handle(self):
@@ -14,15 +14,17 @@ class Workflow(ABC):
     def convertSynonumsToRomans(self, string):
         unitsCountInRomanNumber = ""
 
-        for synonumStr in string:
+        for synonumStr in string.split(' '):
             s = self.Analysis.GetRomanSynonum(synonumStr)
             if s != None:
                 unitsCountInRomanNumber += s.RomanNumber
 
+        return unitsCountInRomanNumber
+
     
     def ExtractOreAndSynonums(self, string):
         parts = string.split(' ')
-        oreName = parts[len(parts) - 1: 1].strip()
+        oreName = parts[-1].strip()
 
-        synonumsStr = parts[:len(parts) - 1]
+        synonumsStr = string.replace(oreName, '')
         return [oreName, self.convertSynonumsToRomans(synonumsStr)]

@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.PersistentModule import RomanNumericProvider
-from GlobeCurrencyCalculator.Enitites import Roman
+from PersistentModule import RomanNumericProvider
+from Enitites import Roman
 import unittest
 
 class RomanNumericProviderTests(unittest.TestCase):

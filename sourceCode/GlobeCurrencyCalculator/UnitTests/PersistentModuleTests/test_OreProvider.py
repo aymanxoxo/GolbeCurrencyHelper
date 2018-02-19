@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.PersistentModule import OreProvider
-from GlobeCurrencyCalculator.Enitites import Ore
+from PersistentModule import OreProvider
+from Enitites import Ore
 import unittest
 
 class OreProviderTests(unittest.TestCase):

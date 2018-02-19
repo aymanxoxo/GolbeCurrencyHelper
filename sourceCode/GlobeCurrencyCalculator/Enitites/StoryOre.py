@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.Enitites import Story, Ore
-from GlobeCurrencyCalculator.WorkflowModule import StoryOreWf
+from Enitites import Story, Ore
+from WorkflowModule import StoryOreWf
 
 class StoryOre(Story, Ore):
     def SetParts(self, leftPart, rightPart):

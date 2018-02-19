@@ -1,1 +1,1 @@
-from GlobeCurrencyCalculator.AnalysisModule.Analysis import Analysis
+from AnalysisModule.Analysis import Analysis

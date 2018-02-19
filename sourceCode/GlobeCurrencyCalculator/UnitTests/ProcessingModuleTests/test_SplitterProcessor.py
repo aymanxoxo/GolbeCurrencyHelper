@@ -1,6 +1,6 @@
 import unittest
-from GlobeCurrencyCalculator.ProcessingModule import SplitterProcessor
-from GlobeCurrencyCalculator.Enitites import StoryOre
+from ProcessingModule import SplitterProcessor
+from Enitites import StoryOre
 
 
 class SplitterProcessorTests(unittest.TestCase):

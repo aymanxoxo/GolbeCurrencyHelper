@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.Enitites import Roman
-from GlobeCurrencyCalculator.HelperModule import List
+from Enitites.Roman import Roman
+from HelperModule import List
 
 
 class RomanNumericProvider:
@@ -19,7 +19,8 @@ class RomanNumericProvider:
         pass
 
     def GetNumericValue(self, romanStr):
-        return self.__values.FirstOrDefault(self.__filter, romanStr.upper())
+        roman = self.__values.FirstOrDefault(self.__filter, romanStr.upper())
+        return roman.Value
 
     def GetRomanNumber(self, number):
         pass

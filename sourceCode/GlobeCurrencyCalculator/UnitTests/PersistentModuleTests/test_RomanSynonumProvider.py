@@ -1,6 +1,6 @@
-from GlobeCurrencyCalculator.PersistentModule import RomanSynonumProvider
-from GlobeCurrencyCalculator.Enitites import RomanSynonym
-from GlobeCurrencyCalculator.Enitites import Roman
+from PersistentModule import RomanSynonumProvider
+from Enitites import RomanSynonym
+from Enitites import Roman
 import unittest
 
 class RomanSynonumProviderTests(unittest.TestCase):

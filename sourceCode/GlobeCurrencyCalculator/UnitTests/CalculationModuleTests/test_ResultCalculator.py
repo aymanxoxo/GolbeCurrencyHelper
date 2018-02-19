@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.CalculationModule import ResultCalculator
-from GlobeCurrencyCalculator.Enitites import Ore
+from CalculationModule import ResultCalculator
+from Enitites import Ore
 import unittest
 
 class ResultCalculatorTests(unittest.TestCase):

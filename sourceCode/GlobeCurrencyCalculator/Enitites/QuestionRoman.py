@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.Enitites import Question, Roman
-from GlobeCurrencyCalculator.WorkflowModule import QuestionRomanWf
+from Enitites import Question, Roman
+from WorkflowModule import QuestionRomanWf
 
 class QuestionRoman(Question, Roman):
     def SetParts(self, leftPart, rightPart):

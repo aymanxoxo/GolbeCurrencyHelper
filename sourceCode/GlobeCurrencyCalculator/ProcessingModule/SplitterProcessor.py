@@ -1,4 +1,4 @@
-from GlobeCurrencyCalculator.Enitites import Input
+from Enitites import Input
 
 class SplitterProcessor:
     def SplitSentence(self, input, separative):

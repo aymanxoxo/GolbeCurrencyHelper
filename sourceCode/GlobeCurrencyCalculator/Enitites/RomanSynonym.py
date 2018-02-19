@@ -1,6 +1,7 @@
-from GlobeCurrencyCalculator.Enitites import Roman
+from Enitites.Roman import Roman
 
 class RomanSynonym(Roman):
     def __init__(self, synonum, roman = None):
         self.Synonum = synonum
-        super(RomanSynonym, self).__init__(roman.RomanNumber, roman.Value)
+        self.RomanNumber = roman.RomanNumber
+        self.Value = roman.Value

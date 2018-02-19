@@ -1,2 +1,2 @@
-from GlobeCurrencyCalculator.HelperModule.InputHelper import InputHelper
-from GlobeCurrencyCalculator.HelperModule.List import List
+from HelperModule.InputHelper import InputHelper
+from HelperModule.List import List

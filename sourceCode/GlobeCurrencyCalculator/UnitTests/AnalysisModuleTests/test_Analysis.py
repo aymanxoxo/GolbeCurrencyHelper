@@ -1,6 +1,6 @@
-from GlobeCurrencyCalculator.AnalysisModule import Analysis
-from GlobeCurrencyCalculator.Enitites import StoryRoman, StoryOre, QuestionRoman, QuestionOre, Ore, InputType
-from GlobeCurrencyCalculator.PersistentModule import OreProvider
+from AnalysisModule import Analysis
+from Enitites import StoryRoman, StoryOre, QuestionRoman, QuestionOre, Ore, InputType
+from PersistentModule import OreProvider
 import unittest
 import pdb
 

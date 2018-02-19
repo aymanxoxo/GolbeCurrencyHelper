@@ -1,11 +1,11 @@
-from GlobeCurrencyCalculator.WorkflowModule import Workflow
-from GlobeCurrencyCalculator.PersistentModule import OreProvider
-from GlobeCurrencyCalculator.CalculationModule import RomanCalculator
+from WorkflowModule import Workflow
+import PersistentModule
+from CalculationModule import RomanCalculator
 
 class QuestionOreWf(Workflow):
     
     def Handle(self):
-        oreProvider = OreProvider()
+        oreProvider = PersistentModule.OreProvider()
         romanCalc = RomanCalculator()
         
         question = self.InputEntity.QuestionPhrase
@@ -18,6 +18,6 @@ class QuestionOreWf(Workflow):
         ore = oreProvider.Get(oreName)
         unitsCount = romanCalc.CalculatorRomanValue(romanNumber)
 
-        return '\n ' + question + ' is ' + unitsCount * ore.Value + ' credits'
+        return '\n ' + question + ' is ' + str(unitsCount * ore.Value) + ' credits'
 
 

@@ -1,1 +1,1 @@
-from GlobeCurrencyCalculator.ProcessingModule.SplitterProcessor import SplitterProcessor
+from ProcessingModule.SplitterProcessor import SplitterProcessor

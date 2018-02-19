@@ -1,6 +1,6 @@
-from GlobeCurrencyCalculator.Enitites.Input import Input
+# from Enitites.Input import  Input
 
-class Ore(Input):
+class Ore():
     def __init__(self, name, value = 0):
         self.Name = name
         self.Value = value

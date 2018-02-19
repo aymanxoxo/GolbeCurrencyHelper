@@ -1,1 +1,1 @@
-from GlobeCurrencyCalculator.UnitTests.AnalysisModuleTests.test_Analysis import test_Analysis
+from UnitTests.AnalysisModuleTests.test_Analysis import test_Analysis

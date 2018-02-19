@@ -1,4 +1,4 @@
-from GlobeCurrencyCalculator.CalculationModule import RomanCalculator
+from CalculationModule import RomanCalculator
 import unittest
 
 class RomanCalculatorTests(unittest.TestCase):

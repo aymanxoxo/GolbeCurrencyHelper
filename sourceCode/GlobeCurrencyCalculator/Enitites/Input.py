@@ -1,4 +1,3 @@
-from GlobeCurrencyCalculator.WorkflowModule import Workflow
 
 class Input:
     def __init__(self, sentence, type):
@@ -10,4 +9,4 @@ class Input:
         pass
 
     def GetWorkflow(self):
-        pass
+        pass 

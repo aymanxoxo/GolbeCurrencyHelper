@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.HelperModule import List
-from GlobeCurrencyCalculator.Enitites import RomanSynonym
+from HelperModule import List
+from Enitites import RomanSynonym
 
 class RomanSynonumProvider:
     __synonums = List()

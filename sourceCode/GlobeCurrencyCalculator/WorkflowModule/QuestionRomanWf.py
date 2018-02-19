@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.WorkflowModule import Workflow
-from GlobeCurrencyCalculator.CalculationModule import RomanCalculator
+from WorkflowModule import Workflow
+from CalculationModule import RomanCalculator
 
 class QuestionRomanWf(Workflow):
 

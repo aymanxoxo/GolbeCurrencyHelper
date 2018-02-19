@@ -1,4 +1,4 @@
-from GlobeCurrencyCalculator.PersistentModule import RomanNumericProvider
+import PersistentModule
 import re
 
 class RomanCalculator:
@@ -8,17 +8,21 @@ class RomanCalculator:
 
         result = 0
         index = 0
-        while index < len(romanStr) - 1:
+        if len(romanStr) == 1:
             first = self.__getNumeric(romanStr[index])
-            second = self.__getNumeric(romanStr[index+1])
-            if self.__canBeSubtracted(first, second):
-                result = result + (second - first)
-                index = index + 2
-            else:
-                result = result + first
-                index = index + 1
-                if index == len(romanStr) - 1:
-                    result = result + second
+            result = result + first
+        else:
+            while index < len(romanStr) - 1:
+                first = self.__getNumeric(romanStr[index])
+                second = self.__getNumeric(romanStr[index+1])
+                if self.__canBeSubtracted(first, second):
+                    result = result + (second - first)
+                    index = index + 2
+                else:
+                    result = result + first
+                    index = index + 1
+                    if index == len(romanStr) - 1:
+                        result = result + second
         return result
             
     def __isValidRoman(self, romanStr):
@@ -29,11 +33,11 @@ class RomanCalculator:
             return False
 
     def __getNumeric(self, roman):
-        provider = RomanNumericProvider()
+        provider = PersistentModule.RomanNumericProvider()
         result = provider.GetNumericValue(roman)
         if result == None:
             raise ValueError
-        return result.Value
+        return result
 
     def __canBeSubtracted(self, first, second):
         if self.__startWith5(first) == False and (first * 5 == second or first * 10 == second):

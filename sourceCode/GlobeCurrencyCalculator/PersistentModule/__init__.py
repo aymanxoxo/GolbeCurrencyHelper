@@ -1,3 +1,3 @@
-from GlobeCurrencyCalculator.PersistentModule.RomanNumericProvider import RomanNumericProvider
-from GlobeCurrencyCalculator.PersistentModule.RomanSynonumProvider import RomanSynonumProvider
-from GlobeCurrencyCalculator.PersistentModule.OreProvider import OreProvider
+from PersistentModule.RomanNumericProvider import RomanNumericProvider
+from PersistentModule.RomanSynonumProvider import RomanSynonumProvider
+from PersistentModule.OreProvider import OreProvider

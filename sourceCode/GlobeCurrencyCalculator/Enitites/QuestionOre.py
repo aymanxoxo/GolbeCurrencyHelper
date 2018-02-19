@@ -1,5 +1,5 @@
-from GlobeCurrencyCalculator.Enitites import Question, Ore
-from GlobeCurrencyCalculator.WorkflowModule import QuestionOreWf
+from Enitites import Question, Ore
+from WorkflowModule import QuestionOreWf
 
 class QuestionOre(Question, Ore):
     def SetParts(self, leftPart, rightPart):

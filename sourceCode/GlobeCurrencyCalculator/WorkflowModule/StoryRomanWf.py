@@ -1,23 +1,22 @@
-from GlobeCurrencyCalculator.WorkflowModule import Workflow
-from GlobeCurrencyCalculator.PersistentModule import RomanSynonumProvider, RomanNumericProvider
-from GlobeCurrencyCalculator.Enitites import RomanSynonym, Roman
+from WorkflowModule import Workflow
+import PersistentModule
+import Enitites
 
 class StoryRomanWf(Workflow):
     
     def Handle(self):
-        synonumProvider = RomanSynonumProvider()
-        romanProvider = RomanNumericProvider()
+        synonumProvider = PersistentModule.RomanSynonumProvider()
+        romanProvider = PersistentModule.RomanNumericProvider()
 
         if self.InputEntity == None or self.InputEntity.LeftPart == None or self.InputEntity.RightPart == None:
             raise ValueError
 
-        synonum = self.InputEntity.LeftPart.strip().upper()
-        roman = self.InputEntity.RightPart.strip().upper()
-
-        if self.Analysis.IsRomanSynonum(roman) == False:
-            raise ValueError
-        
-        synonumProvider.SetRomanSynonum(RomanSynonym(synonum, Roman(roman, romanProvider.GetNumericValue(roman))))
+        synonumStr = self.InputEntity.LeftPart.strip().upper()
+        romanStr = self.InputEntity.RightPart.strip().upper()
+        romanVal = romanProvider.GetNumericValue(romanStr)
+        roman = Enitites.Roman(romanStr, romanVal)
+        romanSynonum = Enitites.RomanSynonym(synonumStr, roman)
+        synonumProvider.SetRomanSynonum(romanSynonum)
 
         return '\n info recorded'
         

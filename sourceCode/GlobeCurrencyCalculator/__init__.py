@@ -1,11 +1,17 @@
-from GlobeCurrencyCalculator.HelperModule import InputHelper
-from GlobeCurrencyCalculator.AnalysisModule import Analysis
+from HelperModule import InputHelper
+from AnalysisModule import Analysis
 
 inputHelper = InputHelper()
 analysis = Analysis()
 
-lines = inputHelper.ReadLines()
+print("Hello, do you have some calculations for me?")
+print("What is the file name?")
+fileName = inputHelper.ReadLine()
+lines = inputHelper.ReadFile(fileName)
 
 for line in lines:
-    input = analysis.DefineSentectType(line)
-    input.Workflow.Handle()
+    entity = analysis.DefineSentectType(line)
+    print(entity.Workflow.Handle())
+
+
+print("see you!")

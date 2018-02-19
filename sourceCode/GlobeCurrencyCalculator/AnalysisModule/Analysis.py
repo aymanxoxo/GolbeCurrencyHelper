@@ -1,15 +1,10 @@
-from GlobeCurrencyCalculator.Enitites import Input, InputType
-from GlobeCurrencyCalculator.PersistentModule import RomanSynonumProvider
-from GlobeCurrencyCalculator.PersistentModule import OreProvider
-from GlobeCurrencyCalculator.HelperModule import List
-from GlobeCurrencyCalculator.Enitites import StoryRoman
-from GlobeCurrencyCalculator.Enitites import StoryOre
-from GlobeCurrencyCalculator.Enitites import QuestionRoman
-from GlobeCurrencyCalculator.Enitites import QuestionOre
+from PersistentModule import RomanSynonumProvider, OreProvider
+from HelperModule import List
+import Enitites
 
 class Analysis:
     def DefineSentectType(self, sentence):
-        sides = sentence.split('is')
+        sides = sentence.split(' is ')
         if len(sides) != 2:
             raise ValueError
 
@@ -21,27 +16,26 @@ class Analysis:
         parts = List()
         parts.extend(sentence.split(' '))
 
-        exists = parts.FirstOrDefault(self.__filter, self.IsOre) != None
+        
 
         if isQuestion:
-            if exists:
-                questionPhrase = sides[1].replace("?", "")
-                q = QuestionOre(questionPhrase)
-                q.Type = InputType.QuestionOre
+            questionPhrase = sides[1].replace("?", "")
+            if parts.FirstOrDefault(self.__filter, self.IsOre) != None:
+                q = Enitites.QuestionOre(questionPhrase)
+                q.Type = Enitites.InputType.QuestionOre
                 return q
             else:
-                questionPhrase = sides[1].replace("?", "")
-                q = QuestionRoman(questionPhrase)
-                q.Type = InputType.QuestionRoman
+                q = Enitites.QuestionRoman(questionPhrase)
+                q.Type = Enitites.InputType.QuestionRoman
                 return q
         else:
-            if exists:
-                s = StoryOre(sides[0], sides[1])
-                s.Type = InputType.StoryOre
+            if parts.FirstOrDefault(self.__filter, self.IsRomanSynonum) != None:
+                s = Enitites.StoryOre(sides[0], sides[1])
+                s.Type = Enitites.InputType.StoryOre
                 return s
             else:
-                s = StoryRoman(sides[0], sides[1])
-                s.Type = InputType.StoryRoman
+                s = Enitites.StoryRoman(sides[0], sides[1])
+                s.Type = Enitites.InputType.StoryRoman
                 return s
 
     def __filter(self, str, func):
@@ -64,4 +58,3 @@ class Analysis:
         result = oreProvider.Get(str.strip())
         x = False if result == None else True
         return x
-    
