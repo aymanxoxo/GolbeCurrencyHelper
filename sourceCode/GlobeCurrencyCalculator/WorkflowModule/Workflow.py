@@ -24,7 +24,11 @@ class Workflow(ABC):
     
     def ExtractOreAndSynonums(self, string):
         parts = string.split(' ')
-        oreName = parts[-1].strip()
+        realParts = []
+        for part in parts:
+            if len(part.strip()) > 0:
+                realParts.append(part)
+        oreName = realParts[-1].strip()
 
         synonumsStr = string.replace(oreName, '')
         return [oreName, self.convertSynonumsToRomans(synonumsStr)]
