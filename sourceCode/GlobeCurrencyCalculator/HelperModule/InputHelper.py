@@ -14,18 +14,22 @@ class InputHelper:
         return cleanLines
 
     def ReadFile(self):
-        print("What is the file name?")
-        fname = self.ReadLine()
-        nameParts = fname.split('.')
-        if len(nameParts) != 2:
-            raise ValueError
-        if nameParts[-1].lower() != 'txt':
-            raise ValueError
+        try:
+            print("What is the file name?")
+            fname = self.ReadLine()
+            nameParts = fname.split('.')
+            if len(nameParts) != 2:
+                raise ValueError
+            if nameParts[-1].lower() != 'txt':
+                raise ValueError
 
-        with open(fname) as f:
-            lines = f.readlines()
-            cleanLines = self.__removeSpacesFromLines(lines)
-            return cleanLines
+            with open(fname) as f:
+                lines = f.readlines()
+                cleanLines = self.__removeSpacesFromLines(lines)
+                return cleanLines
+        except:
+            print("\n Are you trying to hack me? :(")
+            return None
 
     def __removeSpacesFromLine(self, line):
         line = line.replace('\n', '')
